@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef, type CSSProperties } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 
@@ -57,7 +56,7 @@ interface SkillCategory {
 
 interface ExperienceItem {
   text: string;
-  icon: string; // emoji
+  icon: string;
 }
 
 interface Experience {
@@ -67,7 +66,7 @@ interface Experience {
   loc: string;
   color: string;
   items: ExperienceItem[];
-  logo: React.ReactNode; // logo component
+  logo: React.ReactNode;
 }
 
 interface Project {
@@ -1136,7 +1135,9 @@ export default function Portfolio() {
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6, duration: 0.8 }} style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: "clamp(68px,10vw,140px)", fontWeight: 400, lineHeight: 0.9, letterSpacing: ".05em", background: `linear-gradient(135deg, ${C.yellow}, #FFE566 40%, ${C.yellowD} 60%, ${C.yellow})`, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundSize: "300% 300%", animation: "gradientShift 4s ease infinite", marginBottom: 32, filter: "drop-shadow(0 0 20px rgba(255,204,0,0.2))" }}>AWUME</motion.div>
             <motion.div initial={{ opacity: 0, width: 0 }} animate={{ opacity: 1, width: "auto" }} transition={{ delay: 0.8, duration: 1 }} style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 36 }}>
               <div style={{ width: 50, height: 2, background: `linear-gradient(90deg, ${C.yellow}, transparent)` }} />
-              <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, color: C.muted, letterSpacing: ".06em" }}>Junior Full Stack Developer &nbsp;·&nbsp; AI Enthusiast &nbsp;·&nbsp; Bac+3 Génie Logiciel</p>
+              <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 13, color: C.muted, letterSpacing: ".06em" }}>
+                Full Stack Developer & IA · En recherche de stage / CDD · Bac+3 Génie Logiciel
+              </p>
             </motion.div>
 
             {/* Terminal box */}
@@ -1167,13 +1168,34 @@ export default function Portfolio() {
       {/* ── ABOUT ──────────────────────────────────────────────────────── */}
       <section id="about" style={{ position: "relative", zIndex: 2, padding: "140px clamp(24px,6vw,100px)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <SH tag="01 / Profil" title="QUI SUIS-JE ?" sub="Développeur passionné par les solutions digitales, l'architecture full stack et l'intelligence artificielle." />
+          <SH tag="01 / Profil" title="QUI SUIS-JE ?" sub="Développeur Full Stack & IA, à l'affût d'un stage débouchant sur un CDD ou d'un CDD pour déployer mon savoir-faire et impacter vos projets." />
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 28 }}>
-            <Tilt style={{ background: `linear-gradient(135deg, ${C.navy2}, ${C.navy3})`, border: `1px solid ${C.border}`, borderRadius: 24, padding: "40px 36px" }}>
+            <Tilt style={{ background: `linear-gradient(135deg, ${C.navy2}, ${C.navy3})`, border: `1px solid ${C.border}`, borderRadius: 24, padding: "40px 36px", position: "relative" }}>
+              {/* Badge Open to work */}
+              <div style={{
+                position: "absolute",
+                top: 16,
+                right: 16,
+                background: "rgba(255,204,0,0.15)",
+                border: "1px solid rgba(255,204,0,0.3)",
+                borderRadius: 20,
+                padding: "4px 12px",
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+                fontFamily: "'JetBrains Mono',monospace",
+                fontSize: 10,
+                color: C.yellow,
+                letterSpacing: ".08em",
+              }}>
+                <span>🔍</span> Open to work
+              </div>
               <div style={{ width: 80, height: 80, borderRadius: 22, background: `linear-gradient(135deg, ${C.yellow}, #FFE566)`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 32, fontWeight: 900, fontFamily: "'Bebas Neue',sans-serif", color: C.navy, marginBottom: 28, letterSpacing: ".06em", boxShadow: "0 12px 40px rgba(255,204,0,.2)" }}>JA</div>
               <h3 style={{ fontFamily: "'Bebas Neue',sans-serif", fontSize: 30, fontWeight: 400, letterSpacing: ".06em", color: C.white, marginBottom: 10 }}>KELI JASON AWUME</h3>
               <p style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 11, color: C.yellow, marginBottom: 24, letterSpacing: ".1em" }}>jasonawume5@gmail.com</p>
-              <p style={{ fontSize: 14, color: C.muted, lineHeight: 1.8, fontWeight: 300 }}>Titulaire d'une Licence Génie Logiciel Réseaux & Systèmes (ISM Dakar). En stage à Senegal Numerique SA — passionné par la conception de solutions innovantes et l'IA.</p>
+              <p style={{ fontSize: 14, color: C.muted, lineHeight: 1.8, fontWeight: 300 }}>
+                Diplômé d'une Licence Génie Logiciel (ISM Dakar), actuellement en stage à Senegal Numerique SA. Je recherche activement un stage pré‑emploi ou un CDD pour mettre mon expertise en Angular, NestJS et IA au service de projets ambitieux. Passionné, rigoureux, prêt à coder l'avenir avec vous.
+              </p>
             </Tilt>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
               {[{ n: "6+", l: "Projets & stages" },{ n: "2021", l: "1er code" },{ n: "Bac+3", l: "Génie Logiciel" },{ n: "5", l: "Frameworks" }].map((s, i) => (
