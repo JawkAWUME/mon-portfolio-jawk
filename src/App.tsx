@@ -1596,7 +1596,7 @@ export default function Portfolio() {
           </motion.button>
           <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap", marginBottom: 64 }}>
             {[
-              { l: "LinkedIn ↗", href: "https://linkedin.com/in/jason-awume", c: "#60A5FA" },
+              { l: "LinkedIn ↗", href: "https://www.linkedin.com/in/keli-jason-awume-929741230/", c: "#60A5FA" },
               { l: "GitHub / JawkAWUME ↗", href: "https://github.com/JawkAWUME", c: C.white2 },
               { l: "+221 77 246 07 74", href: "tel:+221772460774", c: "#34D399" },
             ].map((b) => (
